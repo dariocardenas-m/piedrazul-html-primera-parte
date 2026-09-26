@@ -4,42 +4,54 @@
 
 **Asignatura:** Laboratorio de Software III  
 **Proyecto:** Clínica Unicauca Salud  
-**Tecnologías:** HTML, CSS, Bootstrap y JavaScript
+**Versión:** Primera implementación web
+
+---
+
+## Video de sustentación
+
+**[Ver video de sustentación](https://youtu.be/IutgmqfuoeQ)**
+
+En el video se presenta la evolución del proyecto desde su primera implementación hasta la versión desarrollada posteriormente utilizando Angular.
 
 ---
 
 ## Descripción
 
-Este repositorio contiene la primera versión de la aplicación web **Clínica Unicauca Salud**, desarrollada como parte de las actividades de la asignatura **Laboratorio de Software III** de la Universidad del Cauca.
+**Clínica Unicauca Salud** es una aplicación web desarrollada como parte de las actividades académicas de la asignatura **Laboratorio de Software III de la Universidad del Cauca**.
 
-Esta implementación corresponde a la versión inicial del proyecto, desarrollada utilizando tecnologías web fundamentales como **HTML, CSS, Bootstrap y JavaScript**.
+Este repositorio contiene la **primera versión del proyecto**, desarrollada utilizando tecnologías web fundamentales como **HTML, CSS, Bootstrap y JavaScript**.
 
-El proyecto permitió establecer la estructura, diseño y funcionalidades principales de la aplicación, sirviendo posteriormente como base para su evolución y migración hacia una implementación utilizando **Angular**.
+Esta implementación permitió construir la estructura inicial de la aplicación, definir su diseño visual y desarrollar las principales funcionalidades relacionadas con la presentación de información de la clínica, médicos, pacientes, citas y productos.
+
+Posteriormente, esta versión fue utilizada como base para la evolución del proyecto hacia una implementación utilizando **Angular**.
 
 ---
 
 ## Tecnologías utilizadas
 
-- **HTML5:** construcción y estructuración del contenido de la aplicación.
-- **CSS3:** diseño y personalización visual de la interfaz.
-- **Bootstrap:** componentes, estilos y distribución responsive.
-- **JavaScript:** implementación de funcionalidades e interacción con el usuario.
+- **HTML5:** estructura y organización del contenido de la aplicación.
+- **CSS3:** estilos y personalización visual.
+- **Bootstrap:** diseño responsive y componentes de interfaz.
+- **JavaScript:** lógica e interacción de la aplicación.
 
 ---
 
 ## Funcionalidades principales
 
-La primera versión de la aplicación cuenta con diferentes secciones y funcionalidades, entre ellas:
+La primera versión de la aplicación incluye:
 
-- Encabezado e información institucional.
+- Encabezado institucional.
 - Barra de navegación.
-- Sección de promociones.
-- Carrusel de contenido.
+- Carrusel de promociones.
+- Información de la clínica.
 - Directorio de médicos.
-- Organización de médicos por especialidad.
-- Formulario de registro.
+- Organización de profesionales por especialidad.
+- Visualización de información de médicos.
+- Registro de pacientes.
 - Validación de información ingresada.
-- Gestión y visualización de citas.
+- Gestión y agendamiento de citas.
+- Notificaciones al usuario.
 - Sección de productos.
 - Información de contacto.
 - Diseño adaptable a diferentes tamaños de pantalla.
