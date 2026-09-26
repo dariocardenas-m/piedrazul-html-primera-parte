@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Centro Medico Univesitario del Cauca</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div id="notificaciones" class="notificaciones-contenedor"></div>
+
+  <header class="header-clinica bg-primary text-white">
+    <div class="container py-3">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h1 class="h3 mb-1"><i class="bi bi-heart-pulse-fill me-2"></i>Centro Medico Unicauca</h1>
+          <p class="mb-0">Encuentra especialistas de confianza y reserva tu consulta de forma sencilla</p>
+        </div>
+        <div class="col-md-4 text-md-end mt-3 mt-md-0">
+          <a href="https://facebook.com" class="text-white me-2" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+          <a href="https://instagram.com" class="text-white me-2" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+          <a href="https://x.com" class="text-white me-2" target="_blank" rel="noopener" aria-label="X"><i class="bi bi-twitter-x fs-4"></i></a>
+          <a href="https://wa.me/573000000000" class="text-white" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp fs-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#promociones">Centro Universitario del Cauca</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#promociones">Ofertas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#medicos">Especialistas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#registro">Inscripción</a></li>
+          <li class="nav-item"><a class="nav-link" href="#productos">Tienda</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="promociones" class="carousel-contenedor">
+    <div class="container-fluid px-0">
+      <div id="carruselPromociones" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carruselPromociones" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Promoción 1"></button>
+          <button type="button" data-bs-target="#carruselPromociones" data-bs-slide-to="1" aria-label="Promoción 2"></button>
+          <button type="button" data-bs-target="#carruselPromociones" data-bs-slide-to="2" aria-label="Promoción 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="carousel-img-wrap">
+              <img src="imagenes/promociones/chequeo.jpg" class="d-block" alt="Evaluación de salud integral">
+            </div>
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+              <h2 class="h4">Evaluación de salud con 20% de descuento</h2>
+              <p>Incluye análisis de laboratorio y consulta con médico general.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-img-wrap">
+              <img src="imagenes/promociones/fisioterapia.jpg" class="d-block" alt="Terapia de rehabilitación">
+            </div>
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+              <h2 class="h4">Combo de rehabilitación física</h2>
+              <p>Cinco sesiones terapéuticas más valoración inicial incluida.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-img-wrap">
+              <img src="imagenes/promociones/nutricion.jpg" class="d-block" alt="Asesoría nutricional">
+            </div>
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+              <h2 class="h4">Programa de nutrición para la familia</h2>
+              <p>Seguimiento de un mes orientado a mejorar hábitos alimenticios.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carruselPromociones" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carruselPromociones" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="medicos" class="py-4">
+    <div class="container-fluid">
+      <div class="row">
+        <aside class="col-12 col-sm-2 col-md-4 mb-3">
+          <h2 class="h5">Áreas médicas</h2>
+          <div id="listaEspecialidades" class="list-group sidebar-especialidades"></div>
+        </aside>
+        <div class="col-12 col-sm-10 col-md-8">
+          <div id="descripcionEspecialidad" class="alert alert-info" role="status">
+            Elija un área médica para conocer los detalles y los profesionales disponibles.
+          </div>
+          <div id="contenedorMedicos" class="row g-3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="registro" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center mb-4">Inscripción de pacientes</h2>
+      <p class="lead text-center mb-4">Ingrese su información personal. Utilizaremos el correo electrónico para verificar su cuenta en el sistema.</p>
+
+      <form id="formPaciente" class="mx-auto" style="max-width: 640px;" novalidate>
+        <div class="mb-3">
+          <label class="form-label" for="nombresPaciente">Nombres</label>
+          <input type="text" class="form-control" id="nombresPaciente" name="nombresPaciente" placeholder="Ingrese sus nombres">
+          <div id="error-nombresPaciente" class="mensaje-error text-danger"></div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="apellidosPaciente">Apellidos</label>
+          <input type="text" class="form-control" id="apellidosPaciente" name="apellidosPaciente" placeholder="Ingrese sus apellidos">
+          <div id="error-apellidosPaciente" class="mensaje-error text-danger"></div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="documentoPaciente">Número de documento</label>
+          <input type="text" class="form-control" id="documentoPaciente" name="documentoPaciente" placeholder="Únicamente números">
+          <div class="form-text">Debe contener entre 6 y 12 dígitos, sin puntos ni espacios.</div>
+          <div id="error-documentoPaciente" class="mensaje-error text-danger"></div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="correoPaciente">Correo electrónico</label>
+          <input type="email" class="form-control" id="correoPaciente" name="correoPaciente" placeholder="usuario@ejemplo.com">
+          <div class="form-text">Enviaremos un mensaje de verificación a esta dirección.</div>
+          <div id="error-correoPaciente" class="mensaje-error text-danger"></div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="confirmarCorreoPaciente">Confirmar correo electrónico</label>
+          <input type="email" class="form-control" id="confirmarCorreoPaciente" name="confirmarCorreoPaciente" placeholder="Vuelva a escribir el correo">
+          <div id="error-confirmarCorreoPaciente" class="mensaje-error text-danger"></div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="telefonoPaciente">Número de contacto</label>
+          <input type="text" class="form-control" id="telefonoPaciente" name="telefonoPaciente" placeholder="3001234567">
+          <div id="error-telefonoPaciente" class="mensaje-error text-danger"></div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="fechaNacimientoPaciente">Fecha de nacimiento</label>
+          <input type="date" class="form-control" id="fechaNacimientoPaciente" name="fechaNacimientoPaciente">
+          <div id="error-fechaNacimientoPaciente" class="mensaje-error text-danger"></div>
+        </div>
+
+        <fieldset class="mb-3">
+          <legend class="form-label">Sexo</legend>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="sexoFemenino" name="sexoPaciente" value="Femenino">
+            <label class="form-check-label" for="sexoFemenino">Femenino</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="sexoMasculino" name="sexoPaciente" value="Masculino">
+            <label class="form-check-label" for="sexoMasculino">Masculino</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" id="sexoOtro" name="sexoPaciente" value="Otro">
+            <label class="form-check-label" for="sexoOtro">Otro</label>
+          </div>
+          <div id="error-sexoPaciente" class="mensaje-error text-danger"></div>
+        </fieldset>
+
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" id="aceptaTerminos" name="aceptaTerminos">
+          <label class="form-check-label" for="aceptaTerminos">Autorizo el manejo de mis datos personales y acepto las condiciones del centro médico</label>
+          <div id="error-aceptaTerminos" class="mensaje-error text-danger"></div>
+        </div>
+
+        <div class="d-flex justify-content-start">
+          <button type="submit" class="btn btn-primary" id="btnAgregarPaciente">Inscribirse</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="productos" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Artículos de la tienda</h2>
+      <p class="lead text-center mb-4">Productos pensados para apoyar el cuidado de la salud desde casa.</p>
+      <div class="row g-3">
+        <div class="col-12 col-sm-6 col-lg-2">
+          <article class="card border h-100 card-producto">
+            <img src="imagenes/productos/multivitaminico.jpg" class="img-fluid border card-img-top" alt="Complejo vitamínico">
+            <div class="card-body">
+              <h3 class="h6">Complejo vitamínico diario</h3>
+              <p class="small mb-0">Suplemento sugerido por el equipo de nutrición clínica.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-2">
+          <article class="card border h-100 card-producto">
+            <img src="imagenes/productos/bandas.jpg" class="img-fluid border card-img-top" alt="Bandas elásticas">
+            <div class="card-body">
+              <h3 class="h6">Bandas elásticas de resistencia</h3>
+              <p class="small mb-0">Ideales para continuar ejercicios de rehabilitación en casa.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-2">
+          <article class="card border h-100 card-producto">
+            <img src="imagenes/productos/aceite.jpg" class="img-fluid border card-img-top" alt="Aceite para masajes">
+            <div class="card-body">
+              <h3 class="h6">Aceite terapéutico para masajes</h3>
+              <p class="small mb-0">Diseñado para aliviar tensión muscular y complementar terapias.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-2">
+          <article class="card border h-100 card-producto">
+            <img src="imagenes/productos/cojin.jpg" class="img-fluid border card-img-top" alt="Soporte lumbar">
+            <div class="card-body">
+              <h3 class="h6">Soporte lumbar ergonómico</h3>
+              <p class="small mb-0">Recomendado para mantener una postura adecuada en el trabajo.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-2">
+          <article class="card border h-100 card-producto">
+            <img src="imagenes/productos/colchoneta.jpg" class="img-fluid border card-img-top" alt="Mat de ejercicios">
+            <div class="card-body">
+              <h3 class="h6">Mat antideslizante</h3>
+              <p class="small mb-0">Útil para ejercicios de piso, estiramientos y rehabilitación domiciliaria.</p>
+            </div>
+          </article>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-2">
+          <article class="card border h-100 card-producto">
+            <img src="imagenes/productos/alimentacion.jpg" class="img-fluid border card-img-top" alt="Kit de alimentación">
+            <div class="card-body">
+              <h3 class="h6">Kit de alimentación balanceada</h3>
+              <p class="small mb-0">Selección de productos orientados a planes nutricionales personalizados.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="modalCita" tabindex="-1" aria-labelledby="tituloModalCita" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="tituloModalCita">Reservar consulta</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p class="form-text mb-3">Es necesario estar inscrito como paciente para poder reservar. Si aún no se ha registrado, complete el formulario de inscripción.</p>
+          <form id="formCitas" novalidate>
+            <div class="mb-3">
+              <label class="form-label" for="fecha">Fecha</label>
+              <input type="date" class="form-control" id="fecha" name="fecha">
+              <div id="error-fecha" class="mensaje-error text-danger"></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="horaInicio">Hora de inicio</label>
+              <input type="time" class="form-control" id="horaInicio" name="horaInicio">
+              <div id="error-horaInicio" class="mensaje-error text-danger"></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="horaFin">Hora de finalización</label>
+              <input type="time" class="form-control" id="horaFin" name="horaFin">
+              <div id="error-horaFin" class="mensaje-error text-danger"></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="medicoSelect">Especialista</label>
+              <select class="form-control" id="medicoSelect" name="medicoSelect">
+                <option value="" disabled selected>Elija un especialista</option>
+              </select>
+              <div id="error-medicoSelect" class="mensaje-error text-danger"></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="pacienteSelect">Paciente</label>
+              <select class="form-control" id="pacienteSelect" name="pacienteSelect">
+                <option value="" disabled selected>Seleccione un paciente registrado</option>
+              </select>
+              <div id="error-pacienteSelect" class="mensaje-error text-danger"></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="motivoCita">Motivo de la consulta</label>
+              <input type="text" class="form-control" id="motivoCita" name="motivoCita" placeholder="Máximo 20 caracteres">
+              <div class="form-text">Máximo 20 caracteres.</div>
+              <div id="error-motivoCita" class="mensaje-error text-danger"></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="correoConfirmacion">Correo para confirmación</label>
+              <input type="email" class="form-control" id="correoConfirmacion" name="correoConfirmacion" placeholder="usuario@ejemplo.com">
+              <div id="error-correoConfirmacion" class="mensaje-error text-danger"></div>
+            </div>
+            <fieldset class="mb-3">
+              <legend class="form-label">Tipo de atención</legend>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="modalidadPresencial" name="modalidadCita" value="Presencial">
+                <label class="form-check-label" for="modalidadPresencial">Presencial</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="modalidadVirtual" name="modalidadCita" value="Virtual">
+                <label class="form-check-label" for="modalidadVirtual">Virtual</label>
+              </div>
+              <div id="error-modalidadCita" class="mensaje-error text-danger"></div>
+            </fieldset>
+            <div class="d-flex justify-content-start">
+              <button type="submit" class="btn btn-primary" id="btnAgregarCita">Registrar consulta</button>
+            </div>
+          </form>
+
+          <div id="bloqueCitas" class="d-none mt-4">
+            <h3 class="h6">Consultas agendadas</h3>
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>Fecha</th>
+                    <th>Inicio</th>
+                    <th>Fin</th>
+                    <th>Especialista</th>
+                    <th>Paciente</th>
+                    <th>Motivo</th>
+                    <th>Modalidad</th>
+                    <th>Correo</th>
+                  </tr>
+                </thead>
+                <tbody id="tablaCitas"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-clinica bg-dark text-white">
+    <div class="container py-4">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="mb-1"><i class="bi bi-geo-alt-fill me-1"></i> Popayán, Cauca — Universidad del Cauca</p>
+          <p class="mb-0 small">Ingeniería del Software III — Laboratorio 4. &copy; 2026 Universidad del Cauca.</p>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+          <a href="https://facebook.com" class="text-white me-2" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+          <a href="https://instagram.com" class="text-white me-2" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+          <a href="https://x.com" class="text-white me-2" target="_blank" rel="noopener" aria-label="X"><i class="bi bi-twitter-x fs-4"></i></a>
+          <a href="https://wa.me/573000000000" class="text-white" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="bi bi-whatsapp fs-4"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../capaDeAccesoADatos/entitys/Medico.js"></script>
+  <script src="../capaDeAccesoADatos/entitys/Paciente.js"></script>
+  <script src="../capaDeAccesoADatos/entitys/Cita.js"></script>
+  <script src="../capaDeAccesoADatos/repositorios/MedicoRepository.js"></script>
+  <script src="../capaDeAccesoADatos/repositorios/PacienteRepository.js"></script>
+  <script src="../capaDeAccesoADatos/repositorios/CitaRepository.js"></script>
+  <script src="../fachadaServices/gestionarMedicosServices.js"></script>
+  <script src="../fachadaServices/gestionarPacientesServices.js"></script>
+  <script src="../fachadaServices/gestionarCitasServices.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="notificaciones.js"></script>
+  <script src="validacion.js"></script>
+  <script src="logicaMedico.js"></script>
+  <script src="logicaPaciente.js"></script>
+  <script src="logicaCita.js"></script>
+</body>
+</html>
